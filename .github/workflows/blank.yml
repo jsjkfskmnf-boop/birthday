@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  overflow: hidden;
+}
+
+.container {
+  margin-top: 15%;
+  color: white;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+p {
+  font-size: 18px;
+}
+
+button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background: #fff;
+  color: #ff4b5c;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.heart {
+  font-size: 50px;
+  animation: beat 1s infinite;
+}
+
+@keyframes beat {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.3);}
+  100% {transform: scale(1);}
+}
+
+/* confetti */
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: red;
+  top: -10px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="heart">❤️</div>
+  <h1>Happy Birthday Sayang 🎂</h1>
+  <p>Semoga panjang umur, murah rezeki & sentiasa bahagia ❤️</p>
+
+  <button onclick="showMessage()">Klik sini 💌</button>
+
+  <p style="margin-top:20px;">
+    <a href="Untitled-1.html" target="_blank" style="color: #fff; text-decoration: underline;">Buka fail ini</a>
+  </p>
+
+  <p style="margin-top:20px;">
+    <img src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=Untitled-1.html" alt="QR code" style="border:2px solid #fff; border-radius:10px;" />
+    <br>Scan untuk buka halaman ini
+  </p>
+
+  <p id="message" style="display:none; margin-top:20px;">
+    I love you so much ❤️<br>
+    Terima kasih selalu ada dengan saya 🥺
+  </p>
+</div>
+
+<audio autoplay loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+</audio>
+
+<script>
+function showMessage() {
+  document.getElementById("message").style.display = "block";
+}
+
+// confetti generator
+for (let i = 0; i < 80; i++) {
+  let confetti = document.createElement("div");
+  confetti.classList.add("confetti");
+  document.body.appendChild(confetti);
+
+  confetti.style.left = Math.random() * window.innerWidth + "px";
+  confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
+  confetti.style.backgroundColor = 
+    ["#ff4b5c", "#ffd700", "#00ffcc", "#ffffff"][Math.floor(Math.random()*4)];
+}
+</script>
+
+</body>
+</html>
